@@ -30,13 +30,15 @@ const onFormImputValue = event => {
     localstorageService.save('userValue', userValue);
   };
 
-  const onFormSubmit = event => {
-    event.preventDefault();
+const onFormSubmit = event => {
+  event.preventDefault()
+  const obj = { email : formAll.elements.email.value, message : formAll.elements.message.value }
+  
+   console.log(obj)
     
-    console.log(localstorageService.load('userValue'))
+ 
         
     localstorageService.remove('userValue');
-
     formAll.reset();
   };
 
