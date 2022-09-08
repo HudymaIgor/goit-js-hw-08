@@ -11,7 +11,7 @@ const formEl = () => {
 
     for (const element in fromValueDate) {
       if (fromValueDate.hasOwnProperty(element)) {
-// console.log(element)
+console.log(element)
         
         formAll.elements[element].value = fromValueDate[element];
 
@@ -19,7 +19,6 @@ const formEl = () => {
       }
     }
 };
-
 
 const onFormImputValue = event => {
 
@@ -33,7 +32,11 @@ const onFormImputValue = event => {
 
   const onFormSubmit = event => {
     event.preventDefault();
+    
+    console.log(localstorageService.load('userValue'))
+        
     localstorageService.remove('userValue');
+
     formAll.reset();
   };
 
